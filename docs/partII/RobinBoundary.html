@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Mixed boundary conditions – An Agent-Based Approach to Modeling Bacterial Multicellularity</title>
+<title>3&nbsp; Mixed boundary conditions – A microbiologist's guide to the diffusion equation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,10 +73,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8894590f4e905bb9429a808ac524e6f9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c4a09a7ffe027904e6eea70dfbe6111d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -137,6 +137,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="../custom.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -148,7 +149,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../partII.html">Part I: Applications</a></li><li class="breadcrumb-item"><a href="../partII/RobinBoundary.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Mixed boundary conditions</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../partII.html">Part I</a></li><li class="breadcrumb-item"><a href="../partII/RobinBoundary.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Mixed boundary conditions</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -161,11 +162,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">An Agent-Based Approach to Modeling Bacterial Multicellularity</a> 
+      <a href="../">A microbiologist’s guide to the diffusion equation</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -184,7 +183,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../partII.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Part I: Applications</span></a>
+ <span class="menu-text">Part I</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -193,25 +192,25 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../partII/diffusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Analytical solution of the 2D diffusion equation with Neumann boundary conditions</span></span></a>
+ <span class="menu-text">Analytical solution of the 2D diffusion</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../partII/nonHomogeneous.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Non-homogeneous case</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Non-homogeneous case</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../partII/effectiveSolution.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Effective solution</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Effective solution</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../partII/RobinBoundary.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Mixed boundary conditions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Mixed boundary conditions</span></span></a>
   </div>
 </li>
       </ul>
@@ -226,16 +225,16 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#finding-eigenfunctions-with-mixed-boundary-conditions" id="toc-finding-eigenfunctions-with-mixed-boundary-conditions" class="nav-link active" data-scroll-target="#finding-eigenfunctions-with-mixed-boundary-conditions"><span class="header-section-number">4.1</span> Finding eigenfunctions with mixed boundary conditions</a></li>
+  <li><a href="#finding-eigenfunctions-with-mixed-boundary-conditions" id="toc-finding-eigenfunctions-with-mixed-boundary-conditions" class="nav-link active" data-scroll-target="#finding-eigenfunctions-with-mixed-boundary-conditions"><span class="header-section-number">3.1</span> Finding eigenfunctions with mixed boundary conditions</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../partII.html">Part I: Applications</a></li><li class="breadcrumb-item"><a href="../partII/RobinBoundary.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Mixed boundary conditions</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../partII.html">Part I</a></li><li class="breadcrumb-item"><a href="../partII/RobinBoundary.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Mixed boundary conditions</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Mixed boundary conditions</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Mixed boundary conditions</span></h1>
 </div>
 
 
@@ -252,10 +251,10 @@ window.Quarto = {
 </header>
 
 
-<p>Let’s consider the same non-homogeneous diffusion equation described in <a href="nonHomogeneous.html" class="quarto-xref"><span>Chapter 2</span></a></p>
+<p>Let’s consider the same non-homogeneous diffusion equation described in <a href="nonHomogeneous.html" class="quarto-xref"><span>Chapter 1</span></a></p>
 <p><span id="eq-29"><span class="math display">\[
 \frac{\partial v}{\partial t} = D \nabla^2 v + Q(x,y,t) - \beta v
-\tag{4.1}\]</span></span></p>
+\tag{3.1}\]</span></span></p>
 <p>where <span class="math display">\[
 Q(x,y,t) = \sum_{i=1}^N A_i \delta(x-x_i) \delta(y-y_i)
 \]</span> represents point-like sources located at positions <span class="math inline">\((x_i,y_i)\)</span>, with production rates <span class="math inline">\(A_i\)</span>. This time, we will impose mixed boundary conditions on one edge of the domain. This is with the goal of modeling the microfluidic device as a rectangular domain which has 3 impermeable walls (Neumann boundary conditions) and one edge that connects the chamber to an external reservoir, allowing for diffusion across the domain (Robin boundary condition).</p>
@@ -268,16 +267,16 @@ Q(x,y,t) = \sum_{i=1}^N A_i \delta(x-x_i) \delta(y-y_i)
 <p><span class="math inline">\(J\)</span> is the diffusion flux across the Robin boundary in the outward normal direction, and it is proportional to the concentration difference between the interior part of the domain at <span class="math inline">\(y=L_y\)</span> and an external reservoir with concentration <span class="math inline">\(v_{ext}\)</span>, <span class="math inline">\(D\)</span> is the diffusion coefficient, <span class="math inline">\(k\)</span> is the mass transfer coefficient. For simplicity, we will assume that <span class="math inline">\(v_{ext}\)</span> is zero.</p>
 <p>Let’s solve this equation using 2 different methods: Eigenfunction expansion and Green’s functions.</p>
 <p>But first, we need to find the eigenfunctions that satisfy the mixed boundary conditions.</p>
-<section id="finding-eigenfunctions-with-mixed-boundary-conditions" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="finding-eigenfunctions-with-mixed-boundary-conditions"><span class="header-section-number">4.1</span> Finding eigenfunctions with mixed boundary conditions</h2>
+<section id="finding-eigenfunctions-with-mixed-boundary-conditions" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="finding-eigenfunctions-with-mixed-boundary-conditions"><span class="header-section-number">3.1</span> Finding eigenfunctions with mixed boundary conditions</h2>
 <p>To find the eigenfunctions, we start with the spatial eigenvalue problem associated with the homogeneous part of the diffusion equation:</p>
 <p><span id="eq-30"><span class="math display">\[
 \frac{\partial v}{\partial t} = D \nabla^2 v - \beta v
-\tag{4.2}\]</span></span> We assume that the solution can be separated into spatial and temporal parts:</p>
+\tag{3.2}\]</span></span> We assume that the solution can be separated into spatial and temporal parts:</p>
 <p><span class="math display">\[
 v(x,y,t) = X(x) Y(y) T(t)
 \]</span></p>
-<p>Substituting this into <a href="#eq-30" class="quarto-xref">Equation&nbsp;<span>4.2</span></a> gives:</p>
+<p>Substituting this into <a href="#eq-30" class="quarto-xref">Equation&nbsp;<span>3.2</span></a> gives:</p>
 <p><span class="math display">\[
 XY \frac{dT}{dt} = D T \left( Y \frac{d^2X}{dx^2} + X \frac{d^2Y}{dy^2} \right) - \beta XYT
 \]</span> Dividing both sides by <span class="math inline">\(XYTD\)</span> leads to:</p>
@@ -292,12 +291,12 @@ XY \frac{dT}{dt} = D T \left( Y \frac{d^2X}{dx^2} + X \frac{d^2Y}{dy^2} \right) 
 \]</span> <span class="math display">\[
 \frac{1}{X} \frac{d^2X}{dx^2} + \frac{1}{Y} \frac{d^2Y}{dy^2} = -\lambda
 \]</span> This gives us 3 ordinary differential equations:</p>
-<p><span id="eq-31"><span class="math display">\[\frac{dT}{dt} = -(\lambda + \frac{\beta}{D}) DT \tag{4.3}\]</span></span> <span id="eq-32"><span class="math display">\[\frac{d^2X}{dx^2} = -\lambda_x X \tag{4.4}\]</span></span> <span id="eq-33"><span class="math display">\[\frac{d^2Y}{dy^2} = -\lambda_y Y \tag{4.5}\]</span></span> with the constraint that <span class="math inline">\(\lambda = \lambda_x + \lambda_y\)</span>.</p>
-<p>The solution to <a href="#eq-31" class="quarto-xref">Equation&nbsp;<span>4.3</span></a> is:</p>
+<p><span id="eq-31"><span class="math display">\[\frac{dT}{dt} = -(\lambda + \frac{\beta}{D}) DT \tag{3.3}\]</span></span> <span id="eq-32"><span class="math display">\[\frac{d^2X}{dx^2} = -\lambda_x X \tag{3.4}\]</span></span> <span id="eq-33"><span class="math display">\[\frac{d^2Y}{dy^2} = -\lambda_y Y \tag{3.5}\]</span></span> with the constraint that <span class="math inline">\(\lambda = \lambda_x + \lambda_y\)</span>.</p>
+<p>The solution to <a href="#eq-31" class="quarto-xref">Equation&nbsp;<span>3.3</span></a> is:</p>
 <p><span class="math display">\[
 T(t) = T(0) e^{-(\lambda + \frac{\beta}{D}) Dt}
 \]</span></p>
-<p>Next, we need to solve <a href="#eq-32" class="quarto-xref">Equation&nbsp;<span>4.4</span></a> and <a href="#eq-33" class="quarto-xref">Equation&nbsp;<span>4.5</span></a>. As shown in <a href="diffusion.html#sec-positiveLambdax" class="quarto-xref"><span>Section 3.1</span></a>, the general solutions are:</p>
+<p>Next, we need to solve <a href="#eq-32" class="quarto-xref">Equation&nbsp;<span>3.4</span></a> and <a href="#eq-33" class="quarto-xref">Equation&nbsp;<span>3.5</span></a>. As shown in <a href="diffusion.html#sec-positiveLambdax" class="quarto-xref"><span>Section 1.2.1</span></a>, the general solutions are:</p>
 <p><span class="math display">\[
 X(x) = A_x \cos(\sqrt{\lambda_x} x) + B_x \sin(\sqrt{\lambda_x} x)
 \]</span> <span class="math display">\[
@@ -887,7 +886,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../partII/effectiveSolution.html" class="pagination-link" aria-label="Effective solution">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Effective solution</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Effective solution</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

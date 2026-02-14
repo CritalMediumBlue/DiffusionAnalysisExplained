@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Part I: Applications – An Agent-Based Approach to Modeling Bacterial Multicellularity</title>
+<title>Part I – A microbiologist’s guide to the diffusion equation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8894590f4e905bb9429a808ac524e6f9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c4a09a7ffe027904e6eea70dfbe6111d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,6 +72,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="custom.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -83,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./partII.html">Part I: Applications</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./partII.html">Part I</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -96,11 +97,9 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">An Agent-Based Approach to Modeling Bacterial Multicellularity</a> 
+      <a href="./">A microbiologist’s guide to the diffusion equation</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -119,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./partII.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Part I: Applications</span></a>
+ <span class="menu-text">Part I</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -128,25 +127,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./partII/diffusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Analytical solution of the 2D diffusion equation with Neumann boundary conditions</span></span></a>
+ <span class="menu-text">Analytical solution of the 2D diffusion</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./partII/nonHomogeneous.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Non-homogeneous case</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Non-homogeneous case</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./partII/effectiveSolution.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Effective solution</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Effective solution</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./partII/RobinBoundary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Mixed boundary conditions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Mixed boundary conditions</span></span></a>
   </div>
 </li>
       </ul>
@@ -164,7 +163,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Part I: Applications</h1>
+<h1 class="title">Part I</h1>
 </div>
 
 
@@ -181,13 +180,13 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This part applies the modeling framework developed in Part I to specific bacterial systems. Each chapter examines a distinct biological case study, demonstrating how agent-based models can capture emergent multicellular behavior from local cellular interactions.</p>
+<p>This part shows cases in which analytical solutions exist. We start with the simplest case of pure diffusion, then add degradation, point sources, and finally discuss how to handle point sinks.</p>
 <p><strong>Chapters in this part:</strong></p>
 <ul>
-<li><strong>Chapter 10</strong> explores <em>Streptomyces</em> developmental biology and aerial hyphae formation</li>
-<li><strong>Chapter 11</strong> investigates <em>Bacillus subtilis</em> biofilm architecture and differentiation</li>
-<li><strong>Chapter 12</strong> analyzes synthetic gene regulatory networks and programmable behavior</li>
-<li><strong>Chapter 13</strong> examines extracellular matrix polymers and mechanical interactions</li>
+<li><strong>Chapter 1</strong> Analytical solution of the 2D diffusion with and without degradation</li>
+<li><strong>Chapter 2</strong> Non-homogeneous case: adding point sources</li>
+<li><strong>Chapter 3</strong> Effective solution: an approximation.</li>
+<li><strong>Chapter 4</strong> Mixed boundary conditions</li>
 </ul>
 
 
@@ -600,8 +599,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./partII/diffusion.html" class="pagination-link" aria-label="Analytical solution of the 2D diffusion equation with Neumann boundary conditions">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Analytical solution of the 2D diffusion equation with Neumann boundary conditions</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./partII/diffusion.html" class="pagination-link" aria-label="Analytical solution of the 2D diffusion">
+        <span class="nav-page-text">Analytical solution of the 2D diffusion</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

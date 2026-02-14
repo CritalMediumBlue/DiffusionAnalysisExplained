@@ -1,0 +1,27 @@
+ /* text next to sliders and inputs in Observable cells */
+.observablehq label {
+  font-size: 1em !important;
+}
+
+/* this controls the size of sliders */
+.observablehq input[type="range"] {
+  height: 5px !important;
+  width: 200px !important;
+}
+
+/* This controls the size of buttons in Observable cells */
+.observablehq button {
+  font-size: 1em !important;
+  padding: 0px 0px !important;
+  height: 25px !important;
+  color: white !important;
+  background-color: #007bff !important;
+}
+
+/* this controls the size of number inputs next to the sliders */
+.observablehq input[type="number"] {
+  font-size: 1em !important;
+  width: 60px !important;
+  height: 21px !important;
+  padding: 1px 2px !important;
+}
