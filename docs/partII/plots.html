@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Solutions to the diffusion equation applied to bacterial monolayers</title>
+<title>Comparison between analytical and numerical solutions – Solutions to the diffusion equation applied to bacterial monolayers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +23,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./partII.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8894590f4e905bb9429a808ac524e6f9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../partII/RobinBoundary.html" rel="next">
+<link href="../partII/effectiveSolution.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-8894590f4e905bb9429a808ac524e6f9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="custom.css">
+<link rel="stylesheet" href="../custom.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -83,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Abstract</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../partII.html">Part I</a></li><li class="breadcrumb-item"><a href="../partII/plots.html">Comparison between analytical and numerical solutions</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -97,10 +98,10 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
+      <a href="../index.html" class="sidebar-logo-link">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Solutions to the diffusion equation applied to bacterial monolayers</a> 
+      <a href="../">Solutions to the diffusion equation applied to bacterial monolayers</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -112,13 +113,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Abstract</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./partII.html" class="sidebar-item-text sidebar-link">
+            <a href="../partII.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Part I</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -127,31 +128,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./partII/diffusion.html" class="sidebar-item-text sidebar-link">
+  <a href="../partII/diffusion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Homogeneous cases</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./partII/nonHomogeneous.html" class="sidebar-item-text sidebar-link">
+  <a href="../partII/nonHomogeneous.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Non-homogeneous case</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./partII/effectiveSolution.html" class="sidebar-item-text sidebar-link">
+  <a href="../partII/effectiveSolution.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Effective solution</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./partII/plots.html" class="sidebar-item-text sidebar-link">
+  <a href="../partII/plots.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Comparison between analytical and numerical solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./partII/RobinBoundary.html" class="sidebar-item-text sidebar-link">
+  <a href="../partII/RobinBoundary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Mixed boundary conditions</span></span></a>
   </div>
 </li>
@@ -162,21 +163,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../partII.html">Part I</a></li><li class="breadcrumb-item"><a href="../partII/plots.html">Comparison between analytical and numerical solutions</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Solutions to the diffusion equation applied to bacterial monolayers</h1>
+<h1 class="title"><span id="sec-comparison-analytical-numerical" class="quarto-section-identifier">Comparison between analytical and numerical solutions</span></h1>
 </div>
 
 
@@ -193,13 +188,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="abstract" class="level1 unnumbered">
-<h1 class="unnumbered">Abstract</h1>
-<p>This work presents several approaches to deriving analytical solutions to the diffusion equation on a 2D domain. We focus on cases common in modeling bacterial cell-cell signaling in monolayers, where cells secrete diffusible molecules that can be taken up by other cells or degraded in the environment. We start with simple cases of pure diffusion, then gradually add complexity by incorporating degradation, point sources, and sinks. We also compare the analytical solutions to numerical simulations to validate our results.</p>
-<!-- **Keywords:** Agent-based modeling, bacterial multicellularity, quorum sensing, biofilms -->
+<p>This chapter groups the comparison between the analytical solution to the steady-state diffusion equation with point sources and sinks shown in <a href="nonHomogeneous.html#eq-29" class="quarto-xref">Equation&nbsp;<span>1</span></a> and the numerical solution obtained by simulating the diffusion equation using the ADI method.</p>
+<iframe src="plots/index.html" style="width: 100%; height: 1700px; border: none;" loading="lazy" title="Diffusion comparison plots">
+</iframe>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -604,10 +597,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../partII/effectiveSolution.html" class="pagination-link" aria-label="Effective solution">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Effective solution</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./partII.html" class="pagination-link" aria-label="Part I">
-        <span class="nav-page-text">Part I</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../partII/RobinBoundary.html" class="pagination-link" aria-label="Mixed boundary conditions">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Mixed boundary conditions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

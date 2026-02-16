@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Non-homogeneous case – A microbiologist's guide to the diffusion equation</title>
+<title>Non-homogeneous case – Solutions to the diffusion equation applied to bacterial monolayers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -74,10 +74,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c4a09a7ffe027904e6eea70dfbe6111d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8894590f4e905bb9429a808ac524e6f9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -150,7 +150,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../partII.html">Part I</a></li><li class="breadcrumb-item"><a href="../partII/nonHomogeneous.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Non-homogeneous case</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../partII.html">Part I</a></li><li class="breadcrumb-item"><a href="../partII/nonHomogeneous.html">Non-homogeneous case</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -163,9 +163,11 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">A microbiologist’s guide to the diffusion equation</a> 
+      <a href="../">Solutions to the diffusion equation applied to bacterial monolayers</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -193,25 +195,31 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../partII/diffusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Analytical solution of the 2D diffusion</span></a>
+ <span class="menu-text">Homogeneous cases</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../partII/nonHomogeneous.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Non-homogeneous case</span></span></a>
+ <span class="menu-text">Non-homogeneous case</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../partII/effectiveSolution.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Effective solution</span></span></a>
+ <span class="menu-text">Effective solution</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partII/plots.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comparison between analytical and numerical solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../partII/RobinBoundary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Mixed boundary conditions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Mixed boundary conditions</span></span></a>
   </div>
 </li>
       </ul>
@@ -226,20 +234,19 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#attempting-separation-of-variables" id="toc-attempting-separation-of-variables" class="nav-link active" data-scroll-target="#attempting-separation-of-variables"><span class="header-section-number">1.1</span> Attempting separation of variables</a></li>
-  <li><a href="#using-eigenfunction-expansion" id="toc-using-eigenfunction-expansion" class="nav-link" data-scroll-target="#using-eigenfunction-expansion"><span class="header-section-number">1.2</span> Using eigenfunction expansion</a></li>
-  <li><a href="#final-solution" id="toc-final-solution" class="nav-link" data-scroll-target="#final-solution"><span class="header-section-number">1.3</span> Final solution</a></li>
-  <li><a href="#steady-state-solution" id="toc-steady-state-solution" class="nav-link" data-scroll-target="#steady-state-solution"><span class="header-section-number">1.4</span> Steady-state solution</a></li>
-  <li><a href="#plotting-the-steady-state-solution" id="toc-plotting-the-steady-state-solution" class="nav-link" data-scroll-target="#plotting-the-steady-state-solution"><span class="header-section-number">1.5</span> Plotting the steady-state solution</a></li>
+  <li><a href="#solution-using-eigenfunction-expansion" id="toc-solution-using-eigenfunction-expansion" class="nav-link active" data-scroll-target="#solution-using-eigenfunction-expansion">Solution using eigenfunction expansion</a></li>
+  <li><a href="#final-solution" id="toc-final-solution" class="nav-link" data-scroll-target="#final-solution">Final solution</a></li>
+  <li><a href="#steady-state-solution" id="toc-steady-state-solution" class="nav-link" data-scroll-target="#steady-state-solution">Steady-state solution</a></li>
+  <li><a href="#plotting-the-steady-state-solution" id="toc-plotting-the-steady-state-solution" class="nav-link" data-scroll-target="#plotting-the-steady-state-solution">Plotting the steady-state solution</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../partII.html">Part I</a></li><li class="breadcrumb-item"><a href="../partII/nonHomogeneous.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Non-homogeneous case</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../partII.html">Part I</a></li><li class="breadcrumb-item"><a href="../partII/nonHomogeneous.html">Non-homogeneous case</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-nonhomogeneous" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Non-homogeneous case</span></span></h1>
+<h1 class="title"><span id="sec-nonhomogeneous" class="quarto-section-identifier">Non-homogeneous case</span></h1>
 </div>
 
 
@@ -259,76 +266,121 @@ window.Quarto = {
 <p>Let’s now consider the non-homogeneous diffusion equation with a constant decay rate <span class="math inline">\(\beta\)</span> and point-like sources that constantly inject material into the system:</p>
 <p><span id="eq-29"><span class="math display">\[
 \frac{\partial v}{\partial t} = D \nabla^2 v + Q(x,y,t) - \beta v
-  \tag{1.1}\]</span></span></p>
+  \tag{1}\]</span></span></p>
 <p>where <span class="math display">\[
 Q(x,y,t) = \sum_{i=1}^N A_i(t) \delta(x-x_i) \delta(y-y_i)
 \]</span> represents point-like sources located at positions <span class="math inline">\((x_i,y_i)\)</span> with time-dependent injection rates <span class="math inline">\(A_i(t) &gt; 0\)</span>, and <span class="math inline">\(v(x,y,t)\)</span> is the new function we want to solve for.</p>
 <p>As before, we will assume reflective boundary conditions on all sides of the rectangular domain of size <span class="math inline">\(L_x \times L_y\)</span></p>
-<section id="attempting-separation-of-variables" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="attempting-separation-of-variables"><span class="header-section-number">1.1</span> Attempting separation of variables</h2>
+<div id="Biological-interpretation" class="callout callout-style-default callout-note callout-titled" title="Biological interpretation of the non-homogeneous diffusion equation">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Biological interpretation of the non-homogeneous diffusion equation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In the context of bacterial cell-cell signaling, the non-homogeneous diffusion equation with point-like sources can be used to model the concentration of a diffusible signaling molecule (e.g.&nbsp;a quorum sensing autoinducer) in a 2D environment where <span class="math inline">\(N\)</span> bacteria are located at specific positions <span class="math inline">\((x_i,y_i)\)</span> and secrete the molecule at rates <span class="math inline">\(A_i(t)\)</span> that can vary over time (e.g.&nbsp;due to changes in gene expression or environmental conditions). The decay term <span class="math inline">\(\beta v\)</span> can represent the degradation of the signaling molecule in the environment, which can occur due to enzymatic activity, chemical instability, or uptake by cells.</p>
+</div>
+</div>
+</div>
+<div id="Challenges" class="callout callout-style-default callout-note callout-titled" title="Challenges in solving the non-homogeneous diffusion equation">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Challenges in solving the non-homogeneous diffusion equation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>If we try to use separation of variables as before, we find that the presence of the non-homogeneous term makes it impossible to separate the variables: <span class="math display">\[
 \frac{1}{T(t)} \frac{dT}{dt} = D \left( \frac{1}{X(x)} \frac{d^2 X}{dx^2} + \frac{1}{Y(y)} \frac{d^2 Y}{dy^2} \right) + \underbrace{\frac{Q(x,y,t)}{X(x) Y(y) T(t)}}_{
 \text{non-separable term}} - \beta
 \]</span></p>
 <p>The presence of the non-separable term <span class="math inline">\(\frac{Q(x,y,t)}{X(x) Y(y) T(t)}\)</span>, which depends on all three variables <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and <span class="math inline">\(t\)</span>, prevents us from separating the variables.</p>
-</section>
-<section id="using-eigenfunction-expansion" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="using-eigenfunction-expansion"><span class="header-section-number">1.2</span> Using eigenfunction expansion</h2>
-<p>We will start by assuming that the solution <span class="math inline">\(v(x,y,t)\)</span> can be written as a sum of eigenmodes, similar to what we did in the homogeneous case:</p>
+</div>
+</div>
+</div>
+<section id="solution-using-eigenfunction-expansion" class="level2">
+<h2 class="anchored" data-anchor-id="solution-using-eigenfunction-expansion">Solution using eigenfunction expansion</h2>
+<p>We will start by assuming that the solution <span class="math inline">\(v(x,y,t)\)</span> can be written as a sum of eigenmodes, similar to what we did in <a href="diffusion.html#eq-16" class="quarto-xref">Equation&nbsp;<span>2.10</span></a> in <a href="diffusion.html#sec-infinite-sum-eigenmodes" class="quarto-xref"><span>Infinite sum of eigenmodes</span></a> for the homogeneous case:</p>
 <p><span id="eq-30"><span class="math display">\[
-v(x,y,t) = \sum_{n=0}^{\infty} \sum_{m=0}^{\infty} T_{n,m}(t) \phi_{n,m}(x,y)
-\tag{1.2}\]</span></span></p>
-<p>where <span class="math inline">\(T_{n,m}(t)\)</span> are time-dependent coefficients to be determined and <span class="math inline">\(\phi_{n,m}(x,y)\)</span> are the eigenfunctions defined as:</p>
-<p><span class="math display">\[
-\phi_{n,m}(x,y) = \cos\left(\frac{n \pi}{L_x} x\right) \cos\left(\frac{m \pi}{L_y} y\right)
-\]</span></p>
-<p>Similarly, we also need to project the source term <span class="math inline">\(Q(x,y,t)\)</span> onto the same eigenmodes:</p>
-<p><span class="math display">\[
-Q(x,y,t)= \sum_{n=0}^{\infty} \sum_{m=0}^{\infty} q_{n,m}(t) \phi_{n,m}(x,y)
-\]</span></p>
-<p>where <span class="math inline">\(q_{n,m}(t)\)</span> are the coefficients of the source term expansion. To find these coefficients, we can use the exact same procedure described in <a href="diffusion.html#sec-determining" class="quarto-xref"><span>Section 2.2</span></a> for determining the coefficients using the initial condition, leveraging the orthogonality property of the cosine functions and the sifting property of the delta function.</p>
-<p>This leads us to the following expression for <span class="math inline">\(q_{n,m}(t)\)</span>:</p>
+v(x,y,t) = \sum_{n=0}^{\infty} \sum_{m=0}^{\infty} T_{n,m}(t) \Phi_{n,m}(x,y)
+\tag{2}\]</span></span></p>
+<p>where <span class="math inline">\(T_{n,m}(t)\)</span> are time-dependent coefficients to be determined and <span class="math inline">\(\Phi_{n,m}(x,y)\)</span> are the eigenfunctions of the Laplacian operator with Neumann boundary conditions (<a href="diffusion.html#eq-eigenfunction-Phi" class="quarto-xref">Equation&nbsp;<span>2.1</span></a>).</p>
+<p>We also express the source term <span class="math inline">\(Q(x,y,t)\)</span> as a linear combination of the same eigenfunctions <span class="math inline">\(\Phi_{n,m}(x,y)\)</span>:</p>
 <p><span id="eq-39"><span class="math display">\[
-q_{n,m}(t) = \frac{4 \varepsilon_n \varepsilon_m}{L_x L_y} \sum_{i=1}^N A_i(t) \phi_{n,m}(x_i,y_i)
-\tag{1.3}\]</span></span></p>
-<p>where</p>
+Q(x,y,t)= \sum_{n=0}^{\infty} \sum_{m=0}^{\infty} q_{n,m}(t) \Phi_{n,m}(x,y)
+\tag{3}\]</span></span></p>
+<p>where <span class="math inline">\(q_{n,m}(t)\)</span> are the coefficients of the source term expansion, which can be determined by projecting <span class="math inline">\(Q(x,y,t)\)</span> onto the eigenfunctions <span class="math inline">\(\Phi_{n,m}(x,y)\)</span>, as we will see later.</p>
+<p>where <span class="math inline">\(q_{n,m}(t)\)</span> are the coefficients of the source term expansion. To find these coefficients, we can use a similar procedure as the one described in <a href="diffusion.html#sec-determining" class="quarto-xref"><span>Determining the amplitudes of the eigenmodes</span></a>. But this time, instead of projecting the initial condition onto the eigenfunctions, we will project the time-dependent source term <span class="math inline">\(Q(x,y,t)\)</span> onto the eigenfunctions:</p>
+<p>This leads us to the following expression for <span class="math inline">\(q_{n,m}(t)\)</span>:</p>
+<p><span id="eq-coefficients-qnm"><span class="math display">\[
+q_{n,m}(t) = \frac{4 \varepsilon_n \varepsilon_m}{L_x L_y} \sum_{i=1}^N A_i(t) \Phi_{n,m}(x_i,y_i)
+\tag{4}\]</span></span></p>
+<p>Now we can substitute the expansion for <a href="#eq-30"><span class="math inline">\(v(x,y,t)\)</span></a> and <a href="#eq-39"><span class="math inline">\(Q(x,y,t)\)</span></a> into the original PDE <a href="#eq-29" class="quarto-xref">Equation&nbsp;<span>1</span></a>.</p>
+<div id="Derivation-of-ODEs-for-eigenmode-coefficients" class="callout callout-style-default callout-note callout-titled" title="Derivation of ODEs for eigenmode coefficients">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Derivation of ODEs for eigenmode coefficients
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Since the equation is large, we will represent the infinite sum of infinite eigenmodes as <span class="math inline">\(\sum_{n,m}^{\infty, \infty}\)</span> for brevity:</p>
 <p><span class="math display">\[
-\varepsilon_n = \begin{cases} 1/2 &amp; \text{if } n=0 \\ 1 &amp; \text{if } n&gt;0 \end{cases}
-\quad , \quad
-\varepsilon_m = \begin{cases} 1/2  &amp; \text{if } m=0 \\ 1 &amp; \text{if } m&gt;0 \end{cases}
-\]</span></p>
-<p>Now we can substitute the expansion for <span class="math inline">\(v(x,y,t)\)</span> and <span class="math inline">\(Q(x,y,t)\)</span> into the original PDE <a href="RobinBoundary.html#eq-29" class="quarto-xref">Equation&nbsp;<span>3.1</span></a>. Since the equation is large, we will represent the infinite sum of infinite eigenmodes as <span class="math inline">\(\sum_{n,m}^{\infty, \infty}\)</span> for brevity:</p>
-<p><span class="math display">\[
-\frac{\partial}{\partial t} \left( \sum_{n,m}^{\infty, \infty} T_{n,m}(t) \phi_{n,m}(x,y) \right) = D \nabla^2 \left( \sum_{n,m}^{\infty, \infty} T_{n,m}(t) \phi_{n,m}(x,y) \right) +
+\frac{\partial}{\partial t} \left( \sum_{n,m}^{\infty, \infty} T_{n,m}(t) \Phi_{n,m}(x,y) \right) = D \nabla^2 \left( \sum_{n,m}^{\infty, \infty} T_{n,m}(t) \Phi_{n,m}(x,y) \right) +
 \]</span> <span class="math display">\[
-\sum_{n,m}^{\infty, \infty} q_{n,m}(t) \phi_{n,m}(x,y) - \beta \left( \sum_{n,m}^{\infty, \infty} T_{n,m}(t) \phi_{n,m}(x,y) \right)
+\sum_{n,m}^{\infty, \infty} q_{n,m}(t) \Phi_{n,m}(x,y) - \beta \left( \sum_{n,m}^{\infty, \infty} T_{n,m}(t) \Phi_{n,m}(x,y) \right)
 \]</span> Rearranging the terms gives:</p>
 <p><span class="math display">\[
-\sum_{n,m}^{\infty, \infty} \frac{d T_{n,m}(t)}{dt} \phi_{n,m}(x,y) = D \sum_{n,m}^{\infty, \infty} T_{n,m}(t) \nabla^2 \phi_{n,m}(x,y) +
+\sum_{n,m}^{\infty, \infty} \frac{d T_{n,m}(t)}{dt} \Phi_{n,m}(x,y) = D \sum_{n,m}^{\infty, \infty} T_{n,m}(t) \nabla^2 \Phi_{n,m}(x,y) +
 \]</span> <span class="math display">\[
-\sum_{n,m}^{\infty, \infty} q_{n,m}(t) \phi_{n,m}(x,y) - \beta \sum_{n,m}^{\infty, \infty} T_{n,m}(t) \phi_{n,m}(x,y)
+\sum_{n,m}^{\infty, \infty} q_{n,m}(t) \Phi_{n,m}(x,y) - \beta \sum_{n,m}^{\infty, \infty} T_{n,m}(t) \Phi_{n,m}(x,y)
 \]</span></p>
-<p>As shown in <a href="diffusion.html#sec-eigenvalue" class="quarto-xref"><span>Section 2.0.1</span></a>, we know that the eigenfunctions <span class="math inline">\(\phi_{n,m}(x,y)\)</span> satisfy the eigenvalue equation:</p>
+<p>As shown in <a href="diffusion.html#sec-eigenvalue" class="quarto-xref"><span>Eigenvalue equation verification</span></a>, we know that the eigenfunctions <span class="math inline">\(\Phi_{n,m}(x,y)\)</span> satisfy the eigenvalue equation shown in <a href="diffusion.html#eq-eigenvalue-equation" class="quarto-xref">Equation&nbsp;<span>2.4</span></a>. Which allows us to replace <span class="math inline">\(\nabla^2 \Phi_{n,m}(x,y)\)</span> with <span class="math inline">\(-\lambda_{n,m} \Phi_{n,m}(x,y)\)</span>:</p>
 <p><span class="math display">\[
-\nabla^2 \phi_{n,m}(x,y) = -\lambda_{n,m} \phi_{n,m}(x,y)
-\]</span></p>
-<p>So we can substitute this into the equation above:</p>
-<p><span class="math display">\[
-\sum_{n,m}^{\infty, \infty} \frac{d T_{n,m}(t)}{dt} \phi_{n,m}(x,y) = -D \sum_{n,m}^{\infty, \infty} \lambda_{n,m} T_{n,m}(t) \phi_{n,m}(x,y) +
+\sum_{n,m}^{\infty, \infty} \frac{d T_{n,m}(t)}{dt} \Phi_{n,m}(x,y) = -D \sum_{n,m}^{\infty, \infty} \lambda_{n,m} T_{n,m}(t) \Phi_{n,m}(x,y) +
 \]</span> <span class="math display">\[
-\sum_{n,m}^{\infty, \infty} q_{n,m}(t) \phi_{n,m}(x,y) - \beta \sum_{n,m}^{\infty, \infty} T_{n,m}(t) \phi_{n,m}(x,y)
+\sum_{n,m}^{\infty, \infty} q_{n,m}(t) \Phi_{n,m}(x,y) - \beta \sum_{n,m}^{\infty, \infty} T_{n,m}(t) \Phi_{n,m}(x,y)
 \]</span></p>
-<p>We can now group by the eigenfunctions <span class="math inline">\(\phi_{n,m}(x,y)\)</span>:</p>
+<p>We can now group by the eigenfunctions <span class="math inline">\(\Phi_{n,m}(x,y)\)</span>:</p>
 <p><span class="math display">\[
-\sum_{n,m}^{\infty, \infty} \left( \frac{d T_{n,m}(t)}{dt} + (D \lambda_{n,m} + \beta) T_{n,m}(t) - q_{n,m}(t) \right) \phi_{n,m}(x,y) = 0
+\sum_{n,m}^{\infty, \infty} \left( \frac{d T_{n,m}(t)}{dt} + (D \lambda_{n,m} + \beta) T_{n,m}(t) - q_{n,m}(t) \right) \Phi_{n,m}(x,y) = 0
 \]</span></p>
+<p>A linear combination of linearly independent eigenfunctions <span class="math inline">\(\Phi_{n,m}(x,y)\)</span> can only be equal to zero if the coefficient of each eigenfunction is equal to zero.</p>
+</div>
+</div>
+</div>
 <p>This leaves us with an ordinary differential equation for each mode <span class="math inline">\((n,m)\)</span>:</p>
 <p><span id="eq-40"><span class="math display">\[
 \frac{d T_{n,m}(t)}{dt} + (D \lambda_{n,m} + \beta) T_{n,m}(t) = q_{n,m}(t)
-\tag{1.4}\]</span></span></p>
+\tag{5}\]</span></span></p>
 <p>This is a first-order linear ODE, which we have to solve for each pair <span class="math inline">\((n,m)\)</span></p>
+<div id="Solving-the-ODEs-for-eigenmode-coefficients" class="callout callout-style-default callout-note callout-titled" title="Solving the ODEs for eigenmode coefficients">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Solving the ODEs for eigenmode coefficients
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>For solving this, we can use the <strong>integrating Factor</strong> method, where we will use <span class="math inline">\(e^{k_{n,m} t}\)</span> as the integrating factor, where <span class="math inline">\(k_{n,m} = D \lambda_{n,m} + \beta\)</span>.</p>
-<p>Multiplying both sides of equation <a href="#eq-40" class="quarto-xref">Equation&nbsp;<span>1.4</span></a> by the integrating factor gives:</p>
+<p>Multiplying both sides of equation <a href="#eq-40" class="quarto-xref">Equation&nbsp;<span>5</span></a> by the integrating factor gives:</p>
 <p><span class="math display">\[
 e^{k_{n,m} t} \frac{d T_{n,m}(t)}{dt} + k_{n,m} e^{k_{n,m} t} T_{n,m}(t) = q_{n,m}(t) e^{k_{n,m} t}
 \]</span></p>
@@ -342,22 +394,25 @@ e^{k_{n,m} t} \frac{d T_{n,m}(t)}{dt} + k_{n,m} e^{k_{n,m} t} T_{n,m}(t) = q_{n,
 \]</span> This simplifies to: <span class="math display">\[
 e^{k_{n,m} t} T_{n,m}(t) - T_{n,m}(0) = \int_0^t q_{n,m}(\tau) e^{k_{n,m} \tau} d\tau
 \]</span></p>
+</div>
+</div>
+</div>
 <p>Solving for <span class="math inline">\(T_{n,m}(t)\)</span> gives:</p>
 <p><span class="math display">\[
 T_{n,m}(t) = e^{-k_{n,m} t}  T_{n,m}(0) + \int_0^t q_{n,m}(\tau) e^{-k_{n,m} (t-\tau)} d\tau
 \]</span></p>
 <p>We need to determine <span class="math inline">\(T_{n,m}(0)\)</span> using the initial condition for <span class="math inline">\(v(x,y,0)\)</span>:</p>
 <p><span class="math display">\[
-v(x,y,0) = \sum_{n=0}^{\infty} \sum_{m=0}^{\infty} T_{n,m}(0) \phi_{n,m}(x,y)
+v(x,y,0) = \sum_{n=0}^{\infty} \sum_{m=0}^{\infty} T_{n,m}(0) \Phi_{n,m}(x,y)
 \]</span></p>
-<p>Using the orthogonality property of the eigenfunctions shown in <a href="diffusion.html#sec-determining" class="quarto-xref"><span>Section 2.2</span></a>, we can find <span class="math inline">\(T_{n,m}(0)\)</span> as:</p>
+<p>Using the orthogonality property of the eigenfunctions shown in <a href="diffusion.html#sec-infinite-sum-eigenmodes" class="quarto-xref"><span>Infinite sum of eigenmodes</span></a>, we can find <span class="math inline">\(T_{n,m}(0)\)</span> as:</p>
 <p><span id="eq-41"><span class="math display">\[
-T_{n,m}(0) = \frac{4 \varepsilon_n \varepsilon_m}{L_x L_y} \int_0^{L_x} \int_0^{L_y} v(x,y,0) \phi_{n,m}(x,y) dy dx
-\tag{1.5}\]</span></span></p>
+T_{n,m}(0) = \frac{4 \varepsilon_n \varepsilon_m}{L_x L_y} \int_0^{L_x} \int_0^{L_y} v(x,y,0) \Phi_{n,m}(x,y) dy dx
+\tag{6}\]</span></span></p>
 </section>
-<section id="final-solution" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="final-solution"><span class="header-section-number">1.3</span> Final solution</h2>
-<p>Substituting <span class="math inline">\(T_{n,m}(t)\)</span> back into the eigenfunction expansion for <span class="math inline">\(v(x,y,t)\)</span> in equation <a href="RobinBoundary.html#eq-30" class="quarto-xref">Equation&nbsp;<span>3.2</span></a>, we obtain the final solution for the non-homogeneous diffusion equation with point-like sources:</p>
+<section id="final-solution" class="level2">
+<h2 class="anchored" data-anchor-id="final-solution">Final solution</h2>
+<p>Substituting <span class="math inline">\(T_{n,m}(t)\)</span> back into the eigenfunction expansion for <span class="math inline">\(v(x,y,t)\)</span> in equation <a href="RobinBoundary.html#eq-30" class="quarto-xref">Equation&nbsp;<span>1.2</span></a>, we obtain the final solution for the non-homogeneous diffusion equation with point-like sources:</p>
 <p><span class="math display">\[
 v(x,y,t) = \sum_{n=0}^{\infty} \sum_{m=0}^{\infty} \left[ e^{-k_{n,m} t}  T_{n,m}(0) + \int_0^t q_{n,m}(\tau) e^{-k_{n,m} (t-\tau)} d\tau \right] \phi_{n,m}(x,y)
 \]</span> where</p>
@@ -371,8 +426,8 @@ q_{n,m}(t) = \frac{4 \varepsilon_n \varepsilon_m}{L_x L_y} \sum_{i=1}^N A_i(t) \
 T_{n,m}(0) = \frac{4 \varepsilon_n \varepsilon_m}{L_x L_y} \int_0^{L_x} \int_0^{L_y} v(x,y,0) \phi_{n,m}(x,y) dy dx
 \]</span></p>
 </section>
-<section id="steady-state-solution" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="steady-state-solution"><span class="header-section-number">1.4</span> Steady-state solution</h2>
+<section id="steady-state-solution" class="level2">
+<h2 class="anchored" data-anchor-id="steady-state-solution">Steady-state solution</h2>
 <p>Let’s now evaluate the shape of the solution as <span class="math inline">\(t \to \infty\)</span>, which should correspond to the steady-state solution in which <span class="math inline">\(\frac{\partial v}{\partial t} = 0\)</span>, assuming that the source terms <span class="math inline">\(A_i\)</span> are constant in time.</p>
 <p>As <span class="math inline">\(t \to \infty\)</span>, the exponential decay term <span class="math inline">\(e^{-k_{n,m} t}\)</span> approaches zero for all modes <span class="math inline">\((n,m)\)</span>:</p>
 <p><span class="math display">\[
@@ -406,7 +461,7 @@ q_{n,m} = \frac{4 \varepsilon_n \varepsilon_m}{L_x L_y} \sum_{i=1}^N A_i \phi_{n
 \]</span> <span class="math display">\[
 \phi_{n,m} = \cos\left(\frac{n \pi}{L_x} x\right) \cos\left(\frac{m \pi}{L_y} y\right)
 \]</span></p>
-<p>We can confirm that this is the steady-state solution if we derive the solution directly from the steady-state version of the original PDE <a href="RobinBoundary.html#eq-29" class="quarto-xref">Equation&nbsp;<span>3.1</span></a>, in which we set <span class="math inline">\(\frac{\partial v}{\partial t} = 0\)</span>:</p>
+<p>We can confirm that this is the steady-state solution if we derive the solution directly from the steady-state version of the original PDE <a href="#eq-29" class="quarto-xref">Equation&nbsp;<span>1</span></a>, in which we set <span class="math inline">\(\frac{\partial v}{\partial t} = 0\)</span>:</p>
 <p><span class="math display">\[
 0 = D \nabla^2 v_{ss} + Q(x,y) - \beta v_{ss}
 \]</span> Rearranging gives:</p>
@@ -415,159 +470,159 @@ D \nabla^2 v_{ss} - \beta v_{ss} = - Q(x,y)
 \]</span></p>
 <p>This is known as the inhomogeneous Helmholtz equation (also called the screened Poisson equation).</p>
 </section>
-<section id="plotting-the-steady-state-solution" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="plotting-the-steady-state-solution"><span class="header-section-number">1.5</span> Plotting the steady-state solution</h2>
+<section id="plotting-the-steady-state-solution" class="level2">
+<h2 class="anchored" data-anchor-id="plotting-the-steady-state-solution">Plotting the steady-state solution</h2>
 <p>Let’s plot the steady-state solution for randomly placed point-like sources in a 2D domain.</p>
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="272" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 271;"><span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>Plotly <span class="op">=</span> <span class="pp">require</span>(<span class="st">"plotly.js-dist@2"</span>)</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a><span class="co">// Domain and parameters</span></span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>Lx <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>Ly <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> <span class="fl">0.1</span></span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>TruncationNmax <span class="op">=</span> <span class="dv">25</span></span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>TruncationMmax <span class="op">=</span> <span class="dv">25</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="269" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 268;"><span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>Plotly <span class="op">=</span> <span class="pp">require</span>(<span class="st">"plotly.js-dist@2"</span>)</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a><span class="co">// Domain and parameters</span></span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>Lx <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>Ly <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> <span class="fl">0.1</span></span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>TruncationNmax <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>TruncationMmax <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a><span class="co">// Controls</span></span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a><span class="co">// Controls</span></span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>viewof resample_sources <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Resample sources"</span><span class="op">,</span> {</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span></span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>  <span class="dt">reduce</span><span class="op">:</span> (count) <span class="kw">=&gt;</span> count </span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>viewof resample_sources <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Resample sources"</span><span class="op">,</span> {</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span></span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>  <span class="dt">reduce</span><span class="op">:</span> (count) <span class="kw">=&gt;</span> count </span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a><span class="co">// Grid resolution for plotting</span></span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>Nx <span class="op">=</span> <span class="dv">50</span></span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>Ny <span class="op">=</span> <span class="dv">50</span></span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a><span class="co">// Random sources (recomputed when button is clicked)</span></span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>producers <span class="op">=</span> {</span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>  resample_sources</span>
-<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> arr <span class="op">=</span> []</span>
-<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> k <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> k <span class="op">&lt;</span> N<span class="op">;</span> k<span class="op">++</span>) {</span>
-<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> xk <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> Lx</span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> yk <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> Ly</span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>    arr<span class="op">.</span><span class="fu">push</span>([xk<span class="op">,</span> yk])</span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> arr</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> N}<span class="op">,</span> () <span class="kw">=&gt;</span> <span class="fl">1.0</span>)</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a><span class="co">// Helper: epsilon_n</span></span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">epsilon</span>(n) {</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> n <span class="op">===</span> <span class="dv">0</span> <span class="op">?</span> <span class="fl">0.5</span> <span class="op">:</span> <span class="fl">1.0</span></span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a><span class="co">// Helper: eigenfunction phi_{n,m}(x,y)</span></span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">phi</span>(n<span class="op">,</span> m<span class="op">,</span> x<span class="op">,</span> y) {</span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">cos</span>(n <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">*</span> x <span class="op">/</span> Lx) <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">cos</span>(m <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">*</span> y <span class="op">/</span> Ly)</span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a><span class="co">// Helper: eigenvalue lambda_{n,m}</span></span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">lambda</span>(n<span class="op">,</span> m) {</span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">pow</span>(n <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">/</span> Lx<span class="op">,</span> <span class="dv">2</span>) <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">pow</span>(m <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">/</span> Ly<span class="op">,</span> <span class="dv">2</span>)</span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a><span class="co">// Helper: k_{n,m} = D * lambda_{n,m} + beta</span></span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">k_nm</span>(n<span class="op">,</span> m) {</span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> D <span class="op">*</span> <span class="fu">lambda</span>(n<span class="op">,</span> m) <span class="op">+</span> beta</span>
-<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a><span class="co">// Compute q_{n,m} for all modes</span></span>
-<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">compute_q_nm</span>(n<span class="op">,</span> m) {</span>
-<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> sum <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> N<span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> xi <span class="op">=</span> producers[i][<span class="dv">0</span>]</span>
-<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> yi <span class="op">=</span> producers[i][<span class="dv">1</span>]</span>
-<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> A[i] <span class="op">*</span> <span class="fu">phi</span>(n<span class="op">,</span> m<span class="op">,</span> xi<span class="op">,</span> yi)</span>
-<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (<span class="dv">4</span> <span class="op">*</span> <span class="fu">epsilon</span>(n) <span class="op">*</span> <span class="fu">epsilon</span>(m) <span class="op">/</span> (Lx <span class="op">*</span> Ly)) <span class="op">*</span> sum</span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a><span class="co">// Create spatial grid</span></span>
-<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>xGrid <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> Nx}<span class="op">,</span> (_<span class="op">,</span> i) <span class="kw">=&gt;</span> i <span class="op">*</span> Lx <span class="op">/</span> (Nx <span class="op">-</span> <span class="dv">1</span>))</span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>yGrid <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> Ny}<span class="op">,</span> (_<span class="op">,</span> j) <span class="kw">=&gt;</span> j <span class="op">*</span> Ly <span class="op">/</span> (Ny <span class="op">-</span> <span class="dv">1</span>))</span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a><span class="co">// Compute steady-state solution v_ss(x,y)</span></span>
-<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>vss <span class="op">=</span> {</span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> z <span class="op">=</span> []</span>
-<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> Ny<span class="op">;</span> j<span class="op">++</span>) {</span>
-<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> row <span class="op">=</span> []</span>
-<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> Nx<span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> x <span class="op">=</span> xGrid[i]</span>
-<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> y <span class="op">=</span> yGrid[j]</span>
-<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>      <span class="kw">let</span> value <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Sum over modes</span></span>
-<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (<span class="kw">let</span> n <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> n <span class="op">&lt;=</span> TruncationNmax<span class="op">;</span> n<span class="op">++</span>) {</span>
-<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> (<span class="kw">let</span> m <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> m <span class="op">&lt;=</span> TruncationMmax<span class="op">;</span> m<span class="op">++</span>) {</span>
-<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>          <span class="kw">const</span> q_nm <span class="op">=</span> <span class="fu">compute_q_nm</span>(n<span class="op">,</span> m)</span>
-<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>          <span class="kw">const</span> k <span class="op">=</span> <span class="fu">k_nm</span>(n<span class="op">,</span> m)</span>
-<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>          <span class="kw">const</span> phi_nm <span class="op">=</span> <span class="fu">phi</span>(n<span class="op">,</span> m<span class="op">,</span> x<span class="op">,</span> y)</span>
-<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>          value <span class="op">+=</span> (q_nm <span class="op">/</span> k) <span class="op">*</span> phi_nm</span>
-<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>      row<span class="op">.</span><span class="fu">push</span>(value)</span>
-<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>    z<span class="op">.</span><span class="fu">push</span>(row)</span>
-<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> z</span>
-<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>mutable plotDivSolution <span class="op">=</span> {</span>
-<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> div <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">"div"</span>)</span>
-<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>  div<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">height</span> <span class="op">=</span> <span class="st">"700px"</span></span>
-<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>  div<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">width</span> <span class="op">=</span> <span class="st">"90%"</span></span>
-<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> div</span>
-<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>solutionPlotEigen <span class="op">=</span> {</span>
-<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>  Plotly<span class="op">.</span><span class="fu">react</span>(plotDivSolution<span class="op">,</span> [{</span>
-<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>    <span class="dt">type</span><span class="op">:</span> <span class="st">'surface'</span><span class="op">,</span></span>
-<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>    <span class="dt">x</span><span class="op">:</span> xGrid<span class="op">,</span></span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> yGrid<span class="op">,</span></span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>    <span class="dt">z</span><span class="op">:</span> vss<span class="op">,</span></span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>    <span class="dt">colorscale</span><span class="op">:</span> <span class="st">'Viridis'</span><span class="op">,</span></span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>    <span class="dt">contours</span><span class="op">:</span> {</span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>      <span class="dt">z</span><span class="op">:</span> {</span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>    <span class="dt">show</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>    <span class="dt">usecolormap</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>    <span class="dt">highlightcolor</span><span class="op">:</span> <span class="st">"#42f462"</span><span class="op">,</span></span>
-<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>    <span class="dt">project</span><span class="op">:</span> { <span class="dt">z</span><span class="op">:</span> <span class="kw">true</span> }<span class="op">,</span></span>
-<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
-<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>    <span class="dt">showscale</span><span class="op">:</span> <span class="kw">false</span></span>
-<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>  }]<span class="op">,</span> {</span>
-<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>    <span class="dt">scene</span><span class="op">:</span> {</span>
-<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>      <span class="dt">xaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'x'</span> }<span class="op">,</span></span>
-<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>      <span class="dt">yaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'y'</span> }<span class="op">,</span></span>
-<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>      <span class="dt">zaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'v_ss(x,y)'</span> }<span class="op">,</span></span>
-<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>      <span class="dt">aspectmode</span><span class="op">:</span> <span class="st">'cube'</span></span>
-<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
-<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>    <span class="dt">width</span><span class="op">:</span> <span class="dv">700</span><span class="op">,</span></span>
-<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>    <span class="dt">height</span><span class="op">:</span> <span class="dv">700</span><span class="op">,</span></span>
-<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>    <span class="dt">margin</span><span class="op">:</span> {</span>
-<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>      <span class="dt">l</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
-<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>      <span class="dt">r</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
-<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>      <span class="dt">b</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
-<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>      <span class="dt">t</span><span class="op">:</span> <span class="dv">30</span></span>
-<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a><span class="co">// Grid resolution for plotting</span></span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>Nx <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>Ny <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a><span class="co">// Random sources (recomputed when button is clicked)</span></span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>producers <span class="op">=</span> {</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>  resample_sources</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> arr <span class="op">=</span> []</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> k <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> k <span class="op">&lt;</span> N<span class="op">;</span> k<span class="op">++</span>) {</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> xk <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> Lx</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> yk <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> Ly</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>    arr<span class="op">.</span><span class="fu">push</span>([xk<span class="op">,</span> yk])</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> arr</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> N}<span class="op">,</span> () <span class="kw">=&gt;</span> <span class="fl">1.0</span>)</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a><span class="co">// Helper: epsilon_n</span></span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">epsilon</span>(n) {</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> n <span class="op">===</span> <span class="dv">0</span> <span class="op">?</span> <span class="fl">0.5</span> <span class="op">:</span> <span class="fl">1.0</span></span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a><span class="co">// Helper: eigenfunction phi_{n,m}(x,y)</span></span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">phi</span>(n<span class="op">,</span> m<span class="op">,</span> x<span class="op">,</span> y) {</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">cos</span>(n <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">*</span> x <span class="op">/</span> Lx) <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">cos</span>(m <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">*</span> y <span class="op">/</span> Ly)</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a><span class="co">// Helper: eigenvalue lambda_{n,m}</span></span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">lambda</span>(n<span class="op">,</span> m) {</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">pow</span>(n <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">/</span> Lx<span class="op">,</span> <span class="dv">2</span>) <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">pow</span>(m <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">/</span> Ly<span class="op">,</span> <span class="dv">2</span>)</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a><span class="co">// Helper: k_{n,m} = D * lambda_{n,m} + beta</span></span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">k_nm</span>(n<span class="op">,</span> m) {</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> D <span class="op">*</span> <span class="fu">lambda</span>(n<span class="op">,</span> m) <span class="op">+</span> beta</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a><span class="co">// Compute q_{n,m} for all modes</span></span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">compute_q_nm</span>(n<span class="op">,</span> m) {</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> sum <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> N<span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> xi <span class="op">=</span> producers[i][<span class="dv">0</span>]</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> yi <span class="op">=</span> producers[i][<span class="dv">1</span>]</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> A[i] <span class="op">*</span> <span class="fu">phi</span>(n<span class="op">,</span> m<span class="op">,</span> xi<span class="op">,</span> yi)</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (<span class="dv">4</span> <span class="op">*</span> <span class="fu">epsilon</span>(n) <span class="op">*</span> <span class="fu">epsilon</span>(m) <span class="op">/</span> (Lx <span class="op">*</span> Ly)) <span class="op">*</span> sum</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a><span class="co">// Create spatial grid</span></span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>xGrid <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> Nx}<span class="op">,</span> (_<span class="op">,</span> i) <span class="kw">=&gt;</span> i <span class="op">*</span> Lx <span class="op">/</span> (Nx <span class="op">-</span> <span class="dv">1</span>))</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>yGrid <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> Ny}<span class="op">,</span> (_<span class="op">,</span> j) <span class="kw">=&gt;</span> j <span class="op">*</span> Ly <span class="op">/</span> (Ny <span class="op">-</span> <span class="dv">1</span>))</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a><span class="co">// Compute steady-state solution v_ss(x,y)</span></span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>vss <span class="op">=</span> {</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> z <span class="op">=</span> []</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> Ny<span class="op">;</span> j<span class="op">++</span>) {</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> row <span class="op">=</span> []</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> Nx<span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> x <span class="op">=</span> xGrid[i]</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> y <span class="op">=</span> yGrid[j]</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>      <span class="kw">let</span> value <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Sum over modes</span></span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (<span class="kw">let</span> n <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> n <span class="op">&lt;=</span> TruncationNmax<span class="op">;</span> n<span class="op">++</span>) {</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> (<span class="kw">let</span> m <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> m <span class="op">&lt;=</span> TruncationMmax<span class="op">;</span> m<span class="op">++</span>) {</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>          <span class="kw">const</span> q_nm <span class="op">=</span> <span class="fu">compute_q_nm</span>(n<span class="op">,</span> m)</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>          <span class="kw">const</span> k <span class="op">=</span> <span class="fu">k_nm</span>(n<span class="op">,</span> m)</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>          <span class="kw">const</span> phi_nm <span class="op">=</span> <span class="fu">phi</span>(n<span class="op">,</span> m<span class="op">,</span> x<span class="op">,</span> y)</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>          value <span class="op">+=</span> (q_nm <span class="op">/</span> k) <span class="op">*</span> phi_nm</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>      row<span class="op">.</span><span class="fu">push</span>(value)</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>    z<span class="op">.</span><span class="fu">push</span>(row)</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> z</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>mutable plotDivSolution <span class="op">=</span> {</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> div <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">"div"</span>)</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>  div<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">height</span> <span class="op">=</span> <span class="st">"700px"</span></span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>  div<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">width</span> <span class="op">=</span> <span class="st">"90%"</span></span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> div</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>solutionPlotEigen <span class="op">=</span> {</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>  Plotly<span class="op">.</span><span class="fu">react</span>(plotDivSolution<span class="op">,</span> [{</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>    <span class="dt">type</span><span class="op">:</span> <span class="st">'surface'</span><span class="op">,</span></span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>    <span class="dt">x</span><span class="op">:</span> xGrid<span class="op">,</span></span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> yGrid<span class="op">,</span></span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>    <span class="dt">z</span><span class="op">:</span> vss<span class="op">,</span></span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>    <span class="dt">colorscale</span><span class="op">:</span> <span class="st">'Viridis'</span><span class="op">,</span></span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>    <span class="dt">contours</span><span class="op">:</span> {</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>      <span class="dt">z</span><span class="op">:</span> {</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>    <span class="dt">show</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>    <span class="dt">usecolormap</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>    <span class="dt">highlightcolor</span><span class="op">:</span> <span class="st">"#42f462"</span><span class="op">,</span></span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>    <span class="dt">project</span><span class="op">:</span> { <span class="dt">z</span><span class="op">:</span> <span class="kw">true</span> }<span class="op">,</span></span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>    <span class="dt">showscale</span><span class="op">:</span> <span class="kw">false</span></span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>  }]<span class="op">,</span> {</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>    <span class="dt">scene</span><span class="op">:</span> {</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>      <span class="dt">xaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'x'</span> }<span class="op">,</span></span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>      <span class="dt">yaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'y'</span> }<span class="op">,</span></span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>      <span class="dt">zaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'v_ss(x,y)'</span> }<span class="op">,</span></span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>      <span class="dt">aspectmode</span><span class="op">:</span> <span class="st">'cube'</span></span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>    <span class="dt">width</span><span class="op">:</span> <span class="dv">700</span><span class="op">,</span></span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>    <span class="dt">height</span><span class="op">:</span> <span class="dv">700</span><span class="op">,</span></span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>    <span class="dt">margin</span><span class="op">:</span> {</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>      <span class="dt">l</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>      <span class="dt">r</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>      <span class="dt">b</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>      <span class="dt">t</span><span class="op">:</span> <span class="dv">30</span></span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -1149,13 +1204,13 @@ window._ojs.runtime.interpretFromScriptTags();
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../partII/diffusion.html" class="pagination-link" aria-label="Analytical solution of the 2D diffusion">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Analytical solution of the 2D diffusion</span>
+      <a href="../partII/diffusion.html" class="pagination-link" aria-label="Homogeneous cases">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Homogeneous cases</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../partII/effectiveSolution.html" class="pagination-link" aria-label="Effective solution">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Effective solution</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text">Effective solution</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
